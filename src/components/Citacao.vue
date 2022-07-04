@@ -1,13 +1,21 @@
 <template>
     <div class="citacao">
-        <slot name="autor"></slot>
+        <slot name="autor" v-if="true"></slot>
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['texto']
+    // props: {
+    //     texto: [String]
+    // }
+    props: {
+        texto: {
+            type: String,
+            required: true
+        }
+    }
 }
 </script>
 
