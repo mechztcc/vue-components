@@ -4,7 +4,7 @@
             <button @click="numero--">&lt;</button>
             <button @click="numero++">&gt;</button>
         </span>
-        <Citacao> 
+        <Citacao v-on:teste="capturandoMsg"> 
             <h1 slot="autor">{{ citacoes[indice].autor}}</h1>
             <p>{{ citacoes[indice].texto }}</p>
             <h6>{{ citacoes[indice].fonte }}</h6>
@@ -45,6 +45,11 @@ export default {
     indice() {
       return Math.abs(this.numero % 3);
     },
+  },
+  methods: {
+    capturandoMsg(msg) {
+      console.log(msg);
+    }
   },
 };
 </script>

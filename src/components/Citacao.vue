@@ -14,10 +14,12 @@ export default {
     props: {
         texto: {
             type: String,
-            required: true,
+            required: false,
             default: 'Carregando'
         }
-    }
+    }, mounted() {
+        this.$emit('teste', 'mensagem enviada do filho para o pai')
+    },
 }
 </script>
 
