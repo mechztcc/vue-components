@@ -1,5 +1,6 @@
 <template>
     <div class="citacao">
+        {{ texto }}
         <slot name="autor" v-if="true"></slot>
         <slot></slot>
     </div>
@@ -13,7 +14,8 @@ export default {
     props: {
         texto: {
             type: String,
-            required: true
+            required: true,
+            default: 'Carregando'
         }
     }
 }
